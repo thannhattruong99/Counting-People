@@ -295,7 +295,7 @@ def run():
 
 
 		# show the output frame
-		cv2.imshow("Real-Time Monitoring/Analysis Window", frame)
+		# cv2.imshow("Real-Time Monitoring/Analysis Window", frame)
 		writer.write(frame)
 		key = cv2.waitKey(1) & 0xFF
 
