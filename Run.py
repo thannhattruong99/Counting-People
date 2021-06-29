@@ -321,7 +321,7 @@ def run():
 	# print("[INFO] elapsed time: {:.2f}".format(fps.elapsed()))
 	# print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 	# Total person
-	print(len(empty1))
+	print('PERSONS:', len(empty1))
 	# print(empty1[6])
 	# # if we are not using a video file, stop the camera video stream
 	# if not args.get("input", False):
