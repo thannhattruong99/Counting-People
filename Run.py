@@ -107,7 +107,7 @@ def run():
 		# if we are supposed to be writing a video to disk, initialize
 		# the writer
 		if args["output"] is not None and writer is None:
-			fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+			fourcc = cv2.VideoWriter_fourcc(*"avc1")
 			writer = cv2.VideoWriter(args["output"], fourcc, 30,
 				(W, H), True)
 
@@ -297,11 +297,11 @@ def run():
 		# show the output frame
 		# cv2.imshow("Real-Time Monitoring/Analysis Window", frame)
 		writer.write(frame)
-		key = cv2.waitKey(1) & 0xFF
+		# key = cv2.waitKey(1) & 0xFF
 
 		# if the `q` key was pressed, break from the loop
-		if key == ord("q"):
-			break
+		# if key == ord("q"):
+		# 	break
 
 		# increment the total number of frames processed thus far and
 		# then update the FPS counter
