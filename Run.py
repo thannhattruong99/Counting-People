@@ -79,6 +79,14 @@ def run():
 	# start the frames per second throughput estimator
 	fps = FPS().start()
 
+	# cap = cv2.VideoCapture(args["input"])
+	# width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+	# height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+	if args["output"] is not None and writer is None:
+			fourcc = cv2.VideoWriter_fourcc(*"avc1")
+			writer = cv2.VideoWriter(args["output"], fourcc, 30,
+				(500, 500))
+
 	if config.Thread:
 		vs = thread.ThreadingClass(config.url)
 
@@ -106,10 +114,7 @@ def run():
 
 		# if we are supposed to be writing a video to disk, initialize
 		# the writer
-		if args["output"] is not None and writer is None:
-			fourcc = cv2.VideoWriter_fourcc(*"avc1")
-			writer = cv2.VideoWriter(args["output"], fourcc, 30,
-				(W, H), True)
+		
 
 		# initialize the current status along with our list of bounding
 		# box rectangles returned by either (1) our object detector or
