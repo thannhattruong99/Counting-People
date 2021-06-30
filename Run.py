@@ -79,9 +79,6 @@ def run():
 	# start the frames per second throughput estimator
 	fps = FPS().start()
 
-	# cap = cv2.VideoCapture(args["input"])
-	# width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-	# height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 	if args["output"] is not None and writer is None:
 			fourcc = cv2.VideoWriter_fourcc(*"avc1")
 			writer = cv2.VideoWriter(args["output"], fourcc, 30,
@@ -341,7 +338,7 @@ def run():
 		vs.release()
 
 	# close any open windows
-	cv2.destroyAllWindows()
+	# cv2.destroyAllWindows()
 
 
 ##learn more about different schedules here: https://pypi.org/project/schedule/
