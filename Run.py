@@ -29,6 +29,10 @@ def run():
 		help="minimum probability to filter weak detections")
 	ap.add_argument("-s", "--skip-frames", type=int, default=30,
 		help="# of skip frames between detections")
+	ap.add_argument("-mda", "--maxDisappeared", type=int, default=40,
+		help="# maxDisappeared")
+	ap.add_argument("-mdt", "--maxDistance", type=int, default=50,
+		help="# maxDistance")
 	args = vars(ap.parse_args())
 
 	# initialize the list of class labels MobileNet SSD was trained to
@@ -63,7 +67,7 @@ def run():
 	# instantiate our centroid tracker, then initialize a list to store
 	# each of our dlib correlation trackers, followed by a dictionary to
 	# map each unique object ID to a TrackableObject
-	ct = CentroidTracker(maxDisappeared=40, maxDistance=50)
+	ct = CentroidTracker(maxDisappeared=args["maxDisappeared"], maxDistance=args["maxDisappeared"])
 	trackers = []
 	trackableObjects = {}
 
