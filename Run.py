@@ -268,23 +268,23 @@ def run():
 
 		# construct a tuple of information we will be displaying on the
 		info = [
-		("Exit", totalUp),
+		# ("Exit", totalUp),
 		("Enter", totalDown),
-		("Status", status),
+		# ("Status", status),
 		]
 
-		info2 = [
-		("Total people inside", x),
-		]
+		# info2 = [
+		# ("Total people inside", x),
+		# ]
 
                 # Display the output
 		for (i, (k, v)) in enumerate(info):
 			text = "{}: {}".format(k, v)
 			cv2.putText(frame, text, (10, H - ((i * 20) + 20)), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
 
-		for (i, (k, v)) in enumerate(info2):
-			text = "{}: {}".format(k, v)
-			cv2.putText(frame, text, (265, H - ((i * 20) + 60)), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+		# for (i, (k, v)) in enumerate(info2):
+		# 	text = "{}: {}".format(k, v)
+		# 	cv2.putText(frame, text, (265, H - ((i * 20) + 60)), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
 
 		# Initiate a simple log to save data at end of the day
 		if config.Log:
@@ -340,7 +340,7 @@ def run():
 		vs.release()
 
 	# close any open windows
-	# cv2.destroyAllWindows()
+	cv2.destroyAllWindows()
 
 
 ##learn more about different schedules here: https://pypi.org/project/schedule/
