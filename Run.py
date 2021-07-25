@@ -194,7 +194,7 @@ def run():
 		# object crosses this line we will determine whether they were
 		# moving 'up' or 'down'
 		cv2.line(frame, (0, H // 2), (W, H // 2), (0, 0, 0), 3)
-		cv2.putText(frame, "-Prediction border - Entrance-", (10, H - ((i * 20) + 200)),
+		cv2.putText(frame, "-Shelf boundary-", (10, H - ((i * 20) + 200)),
 			cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
 
 		# use the centroid tracker to associate the (1) old object
