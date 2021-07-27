@@ -27,7 +27,7 @@ def run():
 	# confidence default 0.4
 	ap.add_argument("-c", "--confidence", type=float, default=0.4,
 		help="minimum probability to filter weak detections")
-	ap.add_argument("-s", "--skip-frames", type=int, default=30,
+	ap.add_argument("-s", "--skip_frames", type=int, default=30,
 		help="# of skip frames between detections")
 	ap.add_argument("-mda", "--maxDisappeared", type=int, default=40,
 		help="# maxDisappeared")
